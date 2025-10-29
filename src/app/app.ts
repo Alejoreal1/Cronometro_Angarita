@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { CronoService } from './services/crono-service.js';
-import { Subscription } from 'rxjs';
+import { delay, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -33,9 +33,15 @@ export class App implements OnDestroy {
   }
 
   reset() {
-    this.stop(); //  Detiene el contador
+    this.stop(); //  Detiene el
+    //  contador
     this.time = '00:00:00:000'; 
-    this.start()
+   
+setTimeout(() => {
+   this.start()
+}, 1000);
+
+   
   }
 
   ngOnDestroy() {
